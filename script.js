@@ -7,7 +7,7 @@ document.getElementById('3d-container').appendChild(renderer.domElement);
 
 // Load 3D model
 const loader = new THREE.GLTFLoader();
-loader.load('kabina2.0.glb', (gltf) => {
+loader.load('kabina/kabina2.0.glb', (gltf) => {
     scene.add(gltf.scene);
     gltf.scene.scale.set(2, 2, 2); // Resize model if needed
 }, undefined, (error) => {
