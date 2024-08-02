@@ -1,3 +1,8 @@
+// Перевірка, чи GLTFLoader завантажено
+if (typeof THREE.GLTFLoader === 'undefined') {
+    console.error('GLTFLoader не завантажено. Перевірте підключення скриптів.');
+}
+
 // Створення сцени
 const scene = new THREE.Scene();
 
@@ -12,6 +17,7 @@ document.getElementById('3d-container').appendChild(renderer.domElement);
 // Завантаження моделі
 const loader = new THREE.GLTFLoader();
 loader.load('kabina2.0.glb', (gltf) => {
+    console.log('Модель завантажена:', gltf);
     scene.add(gltf.scene);
     gltf.scene.scale.set(2, 2, 2); // Змінюйте масштаб моделі за потреби
 }, undefined, (error) => {
