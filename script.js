@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('3d-container').appendChild(renderer.domElement);
 
 // Завантаження моделі
-const loader = new THREE.GLTFLoader();
+
 loader.load('kabina2.0.glb', (gltf) => {
     console.log('Модель завантажена:', gltf);
     scene.add(gltf.scene);
